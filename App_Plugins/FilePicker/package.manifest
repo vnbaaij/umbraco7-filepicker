@@ -1,0 +1,32 @@
+{
+    propertyEditors: [
+        {
+		alias: "Our.FilePicker",
+		name: "File Picker",
+		editor: {
+		    view: "~/App_Plugins/FilePicker/filepicker.html"
+		},
+		prevalues: {
+			fields: [
+				{
+					label: "Folder",
+					description: "Pick the folder to select a file from",
+					key: "folder",
+					view: "~/App_Plugins/FilePicker/folderpicker.html",
+					validation: [
+						{
+							type: "Required" 
+						}						
+					]
+				}
+			]
+		}
+        }
+    ]
+    ,
+    javascript: [
+        
+        '~/App_Plugins/FilePicker/filepicker.controller.js'
+		
+    ]
+}

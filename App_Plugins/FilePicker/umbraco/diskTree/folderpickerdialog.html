@@ -1,0 +1,19 @@
+<div class="umb-panel" ng-controller="Our.FolderPickerDialogController">
+	<div class="umb-panel-body no-header">
+		<umb-tree section="settings"
+				  treealias="diskTree"
+				  eventhandler="dialogEventHandler"
+				  hideoptions="true"
+                  hideheader="true"
+				  isdialog="true" />
+    </div>
+	<div class="umb-panel-footer">
+		<div class="umb-el-wrap umb-panel-buttons">
+			<div class="btn-toolbar umb-btn-toolbar pull-right">
+				<a href ng-click="close()" class="btn btn-link">
+					<localize key="general_cancel">Cancel</localize>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
