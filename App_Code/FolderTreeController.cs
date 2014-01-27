@@ -14,8 +14,8 @@ using Umbraco.Web.Trees;
 /// </summary>
 
 //add treecontroller
-[Tree("settings", "diskTree", "Folders")]
-[PluginController("DiskPicker")]
+[Tree("settings", "fileTree", "Folders")]
+[PluginController("FilePicker")]
 public class FolderTreeController : TreeController
 {
 
@@ -40,15 +40,16 @@ public class FolderTreeController : TreeController
 
     private TreeNodeCollection AddFiles(FormDataCollection queryStrings)
     {
-        if (string.IsNullOrWhiteSpace(queryStrings.Get("startfolder")))
+        var ctrl = new FilePickerApiController();
+        var nodes = new TreeNodeCollection();
+        var folder = queryStrings.Get("startfolder");
+        if (string.IsNullOrWhiteSpace(folder))
             return null;
 
-        string path = IOHelper.MapPath(queryStrings.Get("startfolder"));
+        string path = IOHelper.MapPath(folder);
 
-        var nodes = new TreeNodeCollection();
-        DirectoryInfo folder = new DirectoryInfo(path);
 
-        foreach (var file in folder.EnumerateFiles())
+        foreach (var file in ctrl.GetFiles(folder))
         {
             var node = CreateTreeNode(file.FullName.Replace(path, "").Replace("\\", "/"), path, queryStrings, file.Name, "icon-document", false);
             nodes.Add(node);
@@ -59,16 +60,14 @@ public class FolderTreeController : TreeController
 
     private TreeNodeCollection AddFolders(string parent, FormDataCollection queryStrings)
     {
-        string relPath = "~/" + parent;
-        string absPath = IOHelper.MapPath(relPath);
+        var ctrl = new FilePickerApiController();
         
         var nodes = new TreeNodeCollection();
 
-        DirectoryInfo dirs = new DirectoryInfo(absPath);
                
-        foreach (var dir in dirs.EnumerateDirectories())
+        foreach (var dir in ctrl.GetFolders(parent))
         {
-            var node = CreateTreeNode(dir.FullName.Replace(IOHelper.MapPath("~"), "").Replace("\\", "/"), relPath, queryStrings, dir.Name, "icon-folder", dir.EnumerateDirectories().Any());
+            var node = CreateTreeNode(dir.FullName.Replace(IOHelper.MapPath("~"), "").Replace("\\", "/"), "~/"+parent, queryStrings, dir.Name, "icon-folder", dir.EnumerateDirectories().Any());
             nodes.Add(node);
         }
         
