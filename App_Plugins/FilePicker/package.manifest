@@ -1,7 +1,7 @@
 {
     propertyEditors: [
         {
-		alias: "Our.FilePicker",
+		alias: "uComponents.FilePicker",
 		name: "File Picker",
 		editor: {
 		    view: "~/App_Plugins/FilePicker/filepicker.html"

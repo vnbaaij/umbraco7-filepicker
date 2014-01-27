@@ -1,4 +1,4 @@
-angular.module("umbraco").controller("Our.FilePickerController",
+angular.module("umbraco").controller("uComponents.FilePickerController",
 	function ($scope, dialogService) {
 	    $scope.openPicker = function (folder) {
 	        dialogService.open({
@@ -13,11 +13,11 @@ angular.module("umbraco").controller("Our.FilePickerController",
 	   
 	});
 
-angular.module("umbraco").controller("Our.FolderPickerController", 
+angular.module("umbraco").controller("uComponents.FolderPickerController", 
 	function($scope, dialogService){
 		$scope.openPicker = function(){
 			dialogService.open({
-				template: "/App_Plugins/FilePicker/umbraco/diskTree/folderpickerdialog.html",
+				template: "/App_Plugins/FilePicker/folderpickerdialog.html",
 				scope: $scope,
 				callback: populate
 			});
@@ -29,7 +29,7 @@ angular.module("umbraco").controller("Our.FolderPickerController",
 });
 
 
-angular.module("umbraco").controller("Our.FolderPickerDialogController", 
+angular.module("umbraco").controller("uComponents.FolderPickerDialogController", 
 	function($scope, dialogService){
 
 		$scope.dialogEventHandler = $({});
