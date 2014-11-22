@@ -20,8 +20,8 @@
                         ]
                     },
                     {
-                        label: "File filter",
-                        description: "A search string to match against the names of files in the folder",
+                        label: "Filter",
+                        description: "Comma separated list of extensions to filter the files to select from (i.e. '.png,.jpg')",
                         key: "filter",
                         view: "textstring"
                     }

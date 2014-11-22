@@ -40,3 +40,5 @@ bin/
 /Assets/
 /Build/
 *.DS_Store
+/Packages
+/Src/Our.Umbraco.FilePicker/App_Data/ClientDependency

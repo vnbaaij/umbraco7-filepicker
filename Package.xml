@@ -3,7 +3,7 @@
 	<info>
 		<package>
 			<name>File Picker</name>
-			<version>0.0.0</version>
+			<version>1.2.0</version>
 			<license url="http://opensource.org/licenses/MIT">The MIT License (MIT)</license>
 			<url>http://our.umbraco.org/projects/backoffice-extensions/file-picker</url>
 			<requirements>
