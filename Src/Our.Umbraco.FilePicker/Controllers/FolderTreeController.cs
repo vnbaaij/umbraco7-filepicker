@@ -27,9 +27,8 @@ namespace Our.Umbraco.FilePicker.Controllers
 			if (string.IsNullOrWhiteSpace(str))
 				return null;
 
-			var filter = queryStrings.Get("filter");
-			if (string.IsNullOrWhiteSpace(filter))
-				filter = "*";
+			var filter = queryStrings.Get("filter").Split(',');
+			
 
 			var path = IOHelper.MapPath(str);
 			var treeNodeCollection = new TreeNodeCollection();

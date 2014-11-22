@@ -1,19 +1,16 @@
-<div ng-controller="Our.Umbraco.FilePickerController">
-    <ul class="unstyled list-icons" ng-show="model.value.length === 0">
+<div ng-controller="Our.Umbraco.FilePickerController" class="umb-editor">
+    <ul class="unstyled" ng-show="model.value.length !== 0">
         <li>
-            <i class="icon icon-add blue"></i>
-            <a href="#" ng-click="openPicker('{{model.config.folder}}')" prevent-default="">
-                {{model.value}} <localize key="general_add" class="ng-isolate-scope ng-scope">Add</localize>
-
+            <a href="#" prevent-default ng-click="remove()">
+                <i class="icon icon-delete red"></i> {{model.value}}
             </a>
         </li>
     </ul>
-    <ul class="unstyled list-icons" ng-show="model.value.length !== 0">
+    <ul class="unstyled list-icons" ng-show="model.value.length === 0">
         <li>
-            <i class="icon fa-file handle"></i>
-            <a href="#" ng-click="remove()" class="ng-binding" prevent-default="">
-                <i class="icon icon-delete red hover-show"></i>
-                {{model.value}}
+            <i class="icon icon-add blue"></i>
+            <a href="#" ng-click="openPicker()" prevent-default="">
+                <localize key="general_add">Add</localize>
             </a>
         </li>
     </ul>
