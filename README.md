@@ -6,6 +6,8 @@ After installing the package you can add a new datatype with the property editor
 
 When the datatype is configured you can add it to your document types
 
+Many, many thanks to Lee Kelleher and Matt Brailsford for turning my initial proof of concept into a real package.
+
 ##Version history
 
 Version 1.2: first officially released version
