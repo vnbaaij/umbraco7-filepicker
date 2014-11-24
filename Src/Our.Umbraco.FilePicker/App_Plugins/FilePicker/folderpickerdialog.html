@@ -1,11 +1,12 @@
-<div class="umb-panel" ng-controller="Our.Umbraco.FPDialogController">
+<div class="umb-panel" ng-controller="Our.Umbraco.FolderPickerDialogController">
     <div class="umb-panel-body no-header">
         <umb-tree section="dummy"
                   treealias="fileTree"
                   eventhandler="dialogEventHandler"
                   hideoptions="true"
                   hideheader="true"
-                  isdialog="true" />
+                  isdialog="true"
+                  customtreeparams="filter=" />
     </div>
     <div class="umb-panel-footer">
         <div class="umb-el-wrap umb-panel-buttons">

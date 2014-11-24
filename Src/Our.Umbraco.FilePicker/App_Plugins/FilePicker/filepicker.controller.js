@@ -1,4 +1,6 @@
 function filePickerController($scope, dialogService) {
+
+
     $scope.openPicker = function () {
         dialogService.open({
             template: "/App_Plugins/FilePicker/filepickerdialog.html",
@@ -34,7 +36,7 @@ function folderPickerController($scope, dialogService) {
 };
 angular.module("umbraco").controller("Our.Umbraco.FolderPickerController", folderPickerController);
 
-function fpDialogController($scope, dialogService) {
+function filePickerDialogController($scope, dialogService) {
 
     $scope.dialogEventHandler = $({});
     $scope.dialogEventHandler.bind("treeNodeSelect", nodeSelectHandler);
@@ -42,8 +44,21 @@ function fpDialogController($scope, dialogService) {
     function nodeSelectHandler(ev, args) {
         args.event.preventDefault();
         args.event.stopPropagation();
+        if (args.node.icon !== "icon-folder")
+            $scope.submit(args.node.id);
+    };
+};
+angular.module("umbraco").controller("Our.Umbraco.FilePickerDialogController", filePickerDialogController);
 
+function folderPickerDialogController($scope, dialogService) {
+
+    $scope.dialogEventHandler = $({});
+    $scope.dialogEventHandler.bind("treeNodeSelect", nodeSelectHandler);
+
+    function nodeSelectHandler(ev, args) {
+        args.event.preventDefault();
+        args.event.stopPropagation();
         $scope.submit(args.node.id);
     };
 };
-angular.module("umbraco").controller("Our.Umbraco.FPDialogController", fpDialogController);
+angular.module("umbraco").controller("Our.Umbraco.FolderPickerDialogController", folderPickerDialogController);

@@ -21,7 +21,7 @@
                     },
                     {
                         label: "Filter",
-                        description: "Comma separated list of extensions to filter the files to select from (i.e. '.png,.jpg')",
+                        description: "Comma separated list of extensions to filter the files to select from (i.e. 'png, jpg'), no wildcard, no dot",
                         key: "filter",
                         view: "textstring"
                     }
@@ -31,5 +31,5 @@
     ],
     javascript: [
         '~/App_Plugins/FilePicker/filepicker.controller.js'
-    ]
+	]
 }
