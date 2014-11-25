@@ -13,3 +13,6 @@ Many, many thanks to Lee Kelleher and Matt Brailsford for turning my initial pro
 Version 1.2: first officially released version
 
 Version 1.3: Bugfixing release closing issues #2, #3 and #5
+
+Version 1.3.1 Another (very small) bugfix
+
