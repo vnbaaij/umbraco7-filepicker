@@ -57,7 +57,7 @@ namespace Our.Umbraco.FilePicker.Controllers
 			treeNodeCollection.AddRange(pickerApiController.GetFolders(parent,filter)
 				.Select(dir => CreateTreeNode(dir.FullName.Replace(IOHelper.MapPath("~"), "").Replace("\\", "/"),
 					"~/" + parent, queryStrings, dir.Name,
-                    "icon-folder", pickerApiController.GetFiles(dir.FullName.Replace(IOHelper.MapPath("~"), "").Replace("\\", "/"), filter).Any())));
+                    "icon-folder", filter[0]=="." ? dir.EnumerateDirectories().Any() : pickerApiController.GetFiles(dir.FullName.Replace(IOHelper.MapPath("~"), "").Replace("\\", "/"), filter).Any())));
 
 			return treeNodeCollection;
 		}
