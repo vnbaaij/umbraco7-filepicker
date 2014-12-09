@@ -16,3 +16,5 @@ Version 1.3: Bugfixing release closing issues #2, #3 and #5
 
 Version 1.3.1 Another (very small) bugfix
 
+Version 1.3.2 Another (very small) bugfix. Possibly fixes #6
+
