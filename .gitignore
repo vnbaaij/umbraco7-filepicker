@@ -42,3 +42,6 @@ bin/
 *.DS_Store
 /Packages
 /Src/Our.Umbraco.FilePicker/App_Data/ClientDependency
+/Backup
+/Package/File_Picker_1.3.3.zip
+/UpgradeLog.htm
