@@ -20,3 +20,4 @@ Version 1.3.1 Another (very small) bugfix
 
 Version 1.3.2 Another (very small) bugfix. Possibly fixes #6
 
+Version 1.3.3 Fixes issue #9
